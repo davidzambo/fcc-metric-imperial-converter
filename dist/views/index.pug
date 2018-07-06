@@ -1,0 +1,66 @@
+extends templates/layout
+block content
+    div.row.justify-content-center
+        div.col-12.p-4
+            h1.text-center Exercise Tracker
+    div.row.p-4.justify-content-center
+        div.col-12.col-md-4.col-lg-4.col-xl-3
+            div.card.border-primary
+                div.card-header
+                    h4 Create a new user
+                div.card-body
+                    form(method="post" action="/api/user" class="form-horizontal")
+                        div.form-group
+                            code POST /api/user
+
+                        div.form-group
+                            input(name="username" type="text" class="form-control" placeholder="username" title="username")
+                        div.form-group
+                            button(type="submit" class="btn btn-primary btn-block") submit
+        div.col-12.col-md-4.col-lg-4.col-xl-3
+            div.card.border-primary
+                div.card-header
+                    h4 Create a new excercise
+                div.card-body
+                    form(method="post" action="/api/exercise" class="form-horizontal")
+                        div.form-group
+                            code POST /api/exercise
+                        div.form-group
+                            input(name="user_id" type="text" class="form-control" placeholder="user id" title="user id")
+                        div.form-group
+                            input(name="description" type="text" class="form-control" placeholder="description" title="description")
+                        div.form-group
+                            input(name="duration" type="number" class="form-control from-control" placeholder="duration (minutes)" title="duration (minutes)")
+                        div.form-group
+                            input(name="date" type="date" class="form-control from-control" placeholder="date (yyyy-mm-dd)" title="date (yyyy-mm-dd)")
+                        div.form-group
+                            button(type="submit" class="btn btn-primary btn-block") submit
+        div.col-12.col-md-4.col-lg-4.col-xl-3
+            div.card.border-primary
+                div.card-header
+                    h4 Query a user
+                div.card-body
+                    form(method="get" action="/api/exercise/log" class="form-horizontal")
+                        div.form-group
+                            code GET /api/exercise/log?user_id={user_id}&from=[from]&to=[to]&limit=[limit]
+                            br
+                            br
+                            p
+                                strong { } = required
+                            p
+                                strong [ ] = optional
+                        div.form-group
+                            input(name="user_id" type="text" class="form-control" placeholder="user id*" title="user id")
+                        div.form-group
+                            input(name="from" type="date" class="form-control" placeholder="from" title="from")
+                        div.form-group
+                            input(name="to" type="date" class="form-control from-control" placeholder="to" title="to")
+                        div.form-group
+                            input(name="number" type="limit" class="form-control from-control" placeholder="limit" title="limit")
+                        div.form-group
+                            button(type="submit" class="btn btn-primary btn-block") submit
+
+block footer
+    footer
+        a(href="https://www.dcmf.hu/" target="_blank") codedBy
+            img(src="https://www.dcmf.hu/images/dcmf-letters.png" alt="DCMF logo")

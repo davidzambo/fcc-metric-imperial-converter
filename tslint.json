@@ -1,0 +1,43 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "rulesDirectory": [],
+    "rules": {
+      "class-name": true,
+      "encoding": true,
+      "interface-name": [true, "never-prefix"],
+      "max-line-length": {
+        "options": [120]
+      },
+      "new-parens": true,
+      "no-arg": true,
+      "no-bitwise": true,
+      "no-conditional-assignment": true,
+      "no-consecutive-blank-lines": false,
+      "no-console": {
+        "severity": "warning",
+        "options": [
+          "debug",
+          "info",
+          "log",
+          "time",
+          "timeEnd",
+          "trace"
+        ]
+      },
+      "no-var-keyword": true,
+      "no-unused-variable": true,
+      "typedef-whitespace": [true, {
+        "call-signature": "space",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }],
+      "whitespace": [true, "check-branch", "check-decl", "check-module", "check-operator", "check-separator", "check-type", "check-typecast"]
+    },
+    "jsRules": {
+      "max-line-length": {"options": [120]}
+    }
+}
