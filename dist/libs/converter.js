@@ -1,5 +1,3 @@
-
-
 // class Converter {
 //     private firstAlphaIndex: number;
 //     private baseUnit: string;
@@ -18,6 +16,4 @@
 //         }
 //     }
 // }
-
-
-
+//# sourceMappingURL=converter.js.map
