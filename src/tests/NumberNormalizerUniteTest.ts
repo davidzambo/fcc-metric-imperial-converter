@@ -18,7 +18,7 @@ describe("NumberNormalizer", () => {
     });
 
     describe("NumberNormalizer.normalize('1/2/3')", () => {
-        it("should return 0.5", () => {
+        it("should return invalid number", () => {
             assert.throws(() => {
                 return NumberNormalizer.normalize("1/2/3");
             }, "invalid number");
@@ -36,6 +36,13 @@ describe("NumberNormalizer", () => {
         it("should return 1.2", () => {
             const result = NumberNormalizer.normalize("1.2");
             assert.equal(result, 1.2, "Normalizing failed");
+        });
+    });
+
+    describe("NumberNormalizer.normalize()", () => {
+        it("should return 1", () => {
+            const result = NumberNormalizer.normalize();
+            assert.equal(result, 1, "Function call without parameter failse");
         });
     });
 

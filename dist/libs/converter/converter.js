@@ -7,9 +7,9 @@ class Converter {
         this.convertRatio = 1;
         this.initQuantity = 0;
         this.initUnit = "";
-        this.resultString = "";
-        this.convertedQuantity = 1;
-        this.convertedUnit = "";
+        this.string = "";
+        this.returnNum = 1;
+        this.returnUnit = "";
         this.initQuantity = quantity;
         this.initUnit = unit;
     }
@@ -22,11 +22,11 @@ class Converter {
         }
     }
     checkInputs() {
-        if (this.initQuantity < 0 && (this.initUnit !== this.baseUnit && this.initUnit !== this.changeUnit)) {
+        if (Number.isNaN(Number(this.initQuantity)) && (this.initUnit !== this.baseUnit && this.initUnit !== this.changeUnit)) {
             throw new Error("invalid number and unit");
         }
-        if (this.initQuantity < 0) {
-            throw new Error("invalid number!");
+        if (Number.isNaN(Number(this.initQuantity))) {
+            throw new Error("invalid number");
         }
         if (this.initUnit !== this.baseUnit && this.initUnit !== this.changeUnit) {
             throw new Error("invalid unit!");
@@ -35,23 +35,23 @@ class Converter {
     }
     setConvertResult() {
         if (this.initUnit === this.baseUnit) {
-            this.convertedUnit = this.changeUnit;
-            this.convertedQuantity = this.convertRatio * this.initQuantity;
+            this.returnUnit = this.changeUnit;
+            this.returnNum = this.convertRatio * this.initQuantity;
         }
         else {
-            this.convertedUnit = this.baseUnit;
-            this.convertedQuantity = this.initQuantity / this.convertRatio;
+            this.returnUnit = this.baseUnit;
+            this.returnNum = this.initQuantity / this.convertRatio;
         }
-        this.resultString = `${this.initQuantity} ${this.initUnit} converts to`
-            + ` ${this.convertedQuantity.toFixed(5)} ${this.convertedUnit}`;
+        this.string = `${this.initQuantity} ${this.initUnit} converts to`
+            + ` ${this.returnNum.toFixed(5)} ${this.returnUnit}`;
     }
     getConvertResult() {
         return {
             initNum: this.initQuantity,
             initUnit: this.initUnit,
-            returnNum: Number(this.convertedQuantity.toFixed(5)),
-            returnUnit: this.convertedUnit,
-            string: this.resultString,
+            returnNum: Number(this.returnNum.toFixed(5)),
+            returnUnit: this.returnUnit,
+            string: this.string,
         };
     }
 }

@@ -4,7 +4,8 @@ import { HomeController } from "./controllers/HomeController";
 
 export class Router {
     public static initializePaths(app: express.Application) {
+        console.log('run');
         app.all("/", HomeController.show);
-        app.all("/convert", ConvertController.convert);
+        app.all("/api/convert", ConvertController.convert);
     }
 }
