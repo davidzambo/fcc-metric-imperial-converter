@@ -21,7 +21,7 @@ describe("ConversionHandler", () => {
         it("should throw error on invalid number and unit", () => {
             chai_1.assert.throws(() => {
                 return new conversionhandler_1.ConversionHandler("-2ga");
-            }, "invalid number and unit");
+            }, "invalid unit");
         });
     });
     describe("ConversionHandler('gal') conversion check without initNumber", () => {

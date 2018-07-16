@@ -39,18 +39,11 @@ describe("WeightConverter", () => {
             }, "invalid unit");
         });
     });
-    describe("WeightConverter(-3, 'kg')", () => {
-        it(" should throw an error", () => {
-            chai_1.assert.throws(() => {
-                return new weightconverter_1.WeightConverter(-3, "any");
-            }, "invalid number");
-        });
-    });
     describe("WeightConverter(-3, 'error')", () => {
         it(" should throw an error", () => {
             chai_1.assert.throws(() => {
                 return new weightconverter_1.WeightConverter(-3, "any");
-            }, "invalid number and unit");
+            }, "invalid unit");
         });
     });
 });

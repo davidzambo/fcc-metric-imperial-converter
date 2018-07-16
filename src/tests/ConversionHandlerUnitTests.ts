@@ -22,7 +22,7 @@ describe("ConversionHandler", () => {
         it("should throw error on invalid number and unit", () => {
             assert.throws(() => {
                 return new ConversionHandler("-2ga");
-            }, "invalid number and unit");
+            }, "invalid unit");
         });
     });
 

@@ -1,4 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+html,
 body {
-  background-color: red; }
+  height: 100%;
+  min-height: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  letter-spacing: -1px; }
+
+a:visited, a:active, a:link {
+  text-decoration: none;
+  color: white; }
+
+footer {
+  text-align: center;
+  margin: 0 auto; }
+  footer img {
+    height: 1.4rem;
+    width: auto; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -39,18 +39,11 @@ describe("LengthConverter", () => {
             }, "invalid unit");
         });
     });
-    describe("LengthConverter(-3, 'km')", () => {
-        it(" should throw an error", () => {
-            chai_1.assert.throws(() => {
-                return new lengthconverter_1.LengthConverter(-3, "mx");
-            }, "invalid number");
-        });
-    });
     describe("LengthConverter(-3, 'error')", () => {
         it(" should throw an error", () => {
             chai_1.assert.throws(() => {
                 return new lengthconverter_1.LengthConverter(-3, "mx");
-            }, "invalid number and unit");
+            }, "invalid unit");
         });
     });
 });

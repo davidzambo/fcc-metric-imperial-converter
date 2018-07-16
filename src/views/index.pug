@@ -1,0 +1,34 @@
+extends templates/layout
+block content
+    div.row.justify-content-center
+        div.col-12.p-4
+            h1.text-center Metric - Imperial converter
+    div.row
+        div.col-12
+            h3 User stories
+            ul
+                li I will help prevent the client from trying to guess(sniff) the MIME type.
+                li I will prevent cross-site scripting (XSS) attacks.
+                li I can GET /api/convert with a singler parameter containing an accepted number and unit and have it converted.
+                li I can convert 'gal' to 'L' and vice versa. (1 gal to 3.78541 L)
+                li I can convert 'lbs' to 'kg' and vice versa. (1 lbs to 0.453592 kg)
+                li I can convert 'mi' to 'km' and vice versa. (1 mi to 1.60934 km)
+                li If my unit of measurement is invalid, returned will be 'invalid unit'.
+                li If my number is invalid, returned with will 'invalid number'.
+                li If both are invalid, return will be 'invalid number and unit'.
+                li I can use fractions, decimals or both in my parameter(ie. 5, 1/2, 2.5/6), but if nothing is provided it will default to 1.
+                li My return will consist of the initNum, initUnit, returnNum, returnUnit, and string spelling out units in format {initNum} {initial_Units} converts to {returnNum} {return_Units} with the result rounded to 5 decimals.
+    div.row
+        div.col-12.col-md-4.col-lg-3
+            form.form-horizontal(action="/api/convert" method="GET")
+                div.form-group
+                    input.form-control(type=text name="input" placeholder="What would you like to convert?")
+                button.btn.btn-outline-primary convert
+    if (result)
+        div.row
+            p.col-12
+                code #{JSON.stringify(result)}
+block footer
+    footer.row.bg-dark.text-white.p-3
+        a.col-12(href="https://www.dcmf.hu/" target="_blank") codedBy
+            img(src="https://www.dcmf.hu/images/dcmf-letters.png" alt="DCMF logo")

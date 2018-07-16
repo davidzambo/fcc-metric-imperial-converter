@@ -44,19 +44,11 @@ describe("CubicConverter", () => {
         });
     });
 
-    describe("CubicConverter(-3, 'gal')", () => {
-        it(" should throw an error", () => {
-            assert.throws(() => {
-                return new CubicConverter(-3, "error");
-            }, "invalid number");
-        });
-    });
-
     describe("CubicConverter(-3, 'error')", () => {
         it(" should throw an error", () => {
             assert.throws(() => {
                 return new CubicConverter(-3, "error");
-            }, "invalid number and unit");
+            }, "invalid unit");
         });
     });
 

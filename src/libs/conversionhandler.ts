@@ -47,9 +47,11 @@ export class ConversionHandler {
                     throw new Error("invalid unit");
                 }
         }
-        //tslint:disable
-        console.log("hiba", firstAlphaIndex, this.baseNumber, this.baseUnit);
 
         this.result = this.converter.getConvertResult();
+    }
+
+    public getResult() {
+        return this.result;
     }
 }

@@ -39,18 +39,11 @@ describe("CubicConverter", () => {
             }, "invalid unit");
         });
     });
-    describe("CubicConverter(-3, 'gal')", () => {
-        it(" should throw an error", () => {
-            chai_1.assert.throws(() => {
-                return new cubicconverter_1.CubicConverter(-3, "error");
-            }, "invalid number");
-        });
-    });
     describe("CubicConverter(-3, 'error')", () => {
         it(" should throw an error", () => {
             chai_1.assert.throws(() => {
                 return new cubicconverter_1.CubicConverter(-3, "error");
-            }, "invalid number and unit");
+            }, "invalid unit");
         });
     });
 });

@@ -12,6 +12,7 @@
     "@types/pug": "^2.0.4",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
+    "nodemon": "^1.18.2",
     "pug": "^2.0.3"
   },
   "devDependencies": {
@@ -27,7 +28,7 @@
   },
   "scripts": {
     "start": "node ./dist/server.js",
-    "dev": "nodemon ./dist/server.js",
+    "dev": "nodemon",
     "test": "mocha -r ts-node/register --exit src/tests/*.ts"
   }
 }
